@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формы для работы с отзывами и заказами</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Roboto, sans-serif; } /* Добавлено для шрифта */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Формы для работы с отзывами и заказами</h1>
+            <h2>3.7. PHP. Формы</h2>
+        </div>
+
+        <h3>Формы</h3> <!-- Заголовок форм, теперь будет ниже -->
+
+        <div class="wrapper">
+            <form action="process.php" method="post" class="form-container"> 
+                <!-- Первая форма для отзыва -->
+                <h4>Оставить отзыв</h4> <!-- Заголовок формы -->
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="review">Отзыв:</label>
+                    <textarea id="review" name="review" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Рейтинг:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button type="submit">Отправить</button>
+            </form>
+
+            <form action="process.php" method="post" class="form-container"> 
+                <!-- Вторая форма для отмены заказа -->
+                <h4>Отмена заказа</h4> <!-- Заголовок формы -->
+                <div class="form-group">
+                    <label for="order_id">Номер заказа:</label>
+                    <input type="text" id="order_id" name="order_id" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Причина отмены:</label>
+                    <textarea id="reason" name="reason" required></textarea>
+                </div>
+                <button type="submit">Отменить</button>
+            </form>
+
+            <form action="process.php" method="post" class="form-container"> 
+                <!-- Третья форма для добавления отзыва -->
+                <h4>Добавить отзыв</h4> <!-- Заголовок формы -->
+                <div class="form-group">
+                    <label for="new_name">Имя:</label>
+                    <input type="text" id="new_name" name="new_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="new_review">Отзыв:</label>
+                    <textarea id="new_review" name="new_review" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="new_rating">Рейтинг:</label>
+                    <select id="new_rating" name="new_rating" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+
+        <footer class="stripe-footer">
+            <p><b>3.7. PHP. Формы</b></p>
+        </footer>
+    </div>
+</body>
+</html>

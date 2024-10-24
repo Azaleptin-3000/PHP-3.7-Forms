@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box; /* Устанавливаем полные ширину и высоту для всех элементов */
+    margin: 0; /* Убираем отступы для всех элементов */
+    padding: 0; /* Убираем внутренние отступы для всех элементов */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Упрощаем структуру для выравнивания футера */
+    background-color: rgb(189, 166, 217);
+    position: relative; /* Для использования абсолютного позиционирования фона */
+    height: 100vh; /* Высота 100% экрана */
+    font-family: Roboto, sans-serif; /* Убедитесь, что шрифт применён */
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Используем фиксированное позиционирование */
+    top: 150px; /* Увеличиваем отступ сверху для фона */
+    left: 0;
+    width: 100%; /* Заполнение по ширине */
+    height: calc(100% - 80px); /* Высота фона на всю страницу с учетом отступа */
+    background-image: url('./Img/maxresdefaultPHP.jpg'); /* Проверьте правильность пути */
+    background-size: cover; /* Масштабируем изображение на всю страницу */
+    background-position: center center; /* Центрируем изображение */
+    opacity: 0.3; /* Прозрачность изображения */
+    z-index: -1; /* Фон ниже остальных элементов */
+}
+
+.title {
+    text-align: center;
+    padding-top: 20px; /* Отступ сверху для заголовков */
+}
+
+h1 {
+    font-size: 30px;
+    color: rgb(99, 2, 131);
+    font-weight: lighter;
+    margin-bottom: 15px; /* Добавляем отступ между заголовками */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 32px;
+    color: rgb(122, 147, 2);
+    font-weight: bolder;
+    text-shadow: 2px 2px 1px rgba(34, 26, 46, 0.75);
+}
+
+h3 {
+    font-size: 24px;
+    color: rgb(219, 210, 245);
+    margin: 20px 0; /* Отступ сверху и снизу для h3 */
+    margin-top: 230px; /* Уменьшите отступ сверху, чтобы приблизить к формам */
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0.3, 0.3, 0.3, 0.75);
+}
+
+h4 {
+    text-align: center; /* Центрируем заголовок формы */
+    margin-bottom: 15px; /* Отступ снизу для заголовка формы */
+}
+
+.wrapper {
+    display: flex; /* Используем flex для расположения форм горизонтально */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    gap: 20px; /* Отступ между формами */
+    margin-top: 20px; /* Отступ сверху для формы */
+}
+
+form {
+    background-color: rgba(240, 248, 255, 1); /* Светло-голубой оттенок */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Светлая рамка */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    width: 300px; /* Ширина формы */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем форму по горизонтали */
+    margin-bottom: 20px; /* Отступ снизу для каждой формы */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Отступ между группами полей */
+    width: 100%; /* Ширина группы полей */
+    max-width: 400px; /* Максимальная ширина группы полей */
+}
+
+label {
+    display: block; /* Переводим в блочный элемент */
+    text-align: center; /* Центрируем текст */
+    margin-bottom: 5px; /* Отступ между подписью и полем ввода */
+}
+
+textarea, input, select {
+    width: 100%; /* Поля ввода занимают всю ширину группы */
+    padding: 10px; /* Внутренний отступ для удобства */
+    border: 1px solid #ccc; /* Обводка поля ввода */
+    border-radius: 5px; /* Закругление углов */
+}
+
+button {
+    padding: 10px 15px; /* Внутренние отступы для кнопки */
+    background-color: rgb(122, 147, 2); /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем обводку */
+    border-radius: 5px; /* Закругление углов */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+button:hover {
+    background-color: rgb(99, 2, 131); /* Изменение цвета фона при наведении */
+}
+
+.stripe-footer {
+    font-family: Roboto, sans-serif; /* Применяем шрифт Roboto */
+    background: #541964; /* Цвет фона футера */
+    color: #bd47bf; /* Цвет текста футера */
+    text-align: center; /* Центрируем текст */
+    padding: 0.4rem; /* Отступ футера */
+    width: 100%; /* Футер занимает всю ширину */
+    position: absolute; /* Футер будет прижат к низу страницы */
+    bottom: 0; /* Привязка к низу */
+    z-index: 1; /* Устанавливаем выше фона */
+}
